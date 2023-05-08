@@ -6,7 +6,8 @@ createApp({
             title: 'Todolist',
             todoList: [],
             apiUrl: 'server.php',
-            todoItem: ''
+            todoItem: '',
+            removeItem: ''
         }
     },
     methods: {
@@ -25,6 +26,12 @@ createApp({
                 this.todoItem = '';
                 console.log(res.data);
                 this.todoList = res.data;
+            });
+        },
+        removeTodo(index) {
+            axios.post(this.apiUrl, { removeItem: index }, {headers: { 'Content-Type': 'application/json'}}).then((res) => {
+                console.log(res.data);
+                this.todoList.splice(index, 1);
             });
         }
     },

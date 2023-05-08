@@ -13,14 +13,17 @@
     <div id="app">
         <h1>{{title}}</h1>
         <ul>
-            <li v-for="(todo, index) in todoList" :key="index">{{todo}}</li>
+            <li v-for="(todo, index) in todoList" :key="index">
+                {{todo}}
+                <button class="btn btn-danger" type="button" id="button-remove" @click="removeTodo(index)">Rimuovi</button>
+            </li>
         </ul>
         <section class="add-todo">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
                         <input type="text" v-model="todoItem" class="form-control" @keyup.enter="addTodo">
-                        <button class="btn btn-warning" type="button" id="button-add" @click="addTodo">Inserisci</button>
+                        <button class="btn btn-success" type="button" id="button-add" @click="addTodo">Inserisci</button>
                     </div>
                 </div>
             </div>
