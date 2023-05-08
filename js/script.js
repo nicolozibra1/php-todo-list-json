@@ -12,8 +12,8 @@ createApp({
     methods: {
         readTodo() {
             axios.get(this.apiUrl).then((res) => {
-                console.log(res.data)
-                this.todoList = res.data
+                console.log(res.data);
+                this.todoList = res.data;
             });
         },
         addTodo() {
@@ -24,7 +24,7 @@ createApp({
             axios.post(this.apiUrl, data, {headers: { 'Content-Type': 'multipart/form-data'}}).then((res) => {
                 this.todoItem = '';
                 console.log(res.data);
-                this.todoList = res.data
+                this.todoList = res.data;
             });
         }
     },
