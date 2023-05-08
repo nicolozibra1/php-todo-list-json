@@ -15,6 +15,16 @@
         <ul>
             <li v-for="(todo, index) in todoList" :key="index">{{todo}}</li>
         </ul>
+        <section class="add-todo">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <input type="text" v-model="todoItem" class="form-control" @keyup.enter="addTodo">
+                        <button class="btn btn-warning" type="button" id="button-add" @click="addTodo">Inserisci</button>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
     <script src="./js/script.js"></script>
 </body>
