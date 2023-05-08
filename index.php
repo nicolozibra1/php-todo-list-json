@@ -11,7 +11,10 @@
 </head>
 <body>
     <div id="app">
-
+        <h1>{{title}}</h1>
+        <ul>
+            <li v-for="(todo, index) in todoList" :key="index">{{todo}}</li>
+        </ul>
     </div>
     <script src="./js/script.js"></script>
 </body>
